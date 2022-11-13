@@ -1,38 +1,41 @@
-import css from './Profile.modul.css';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
+import styles from './styles.module.css';
 
-export const Profile = ({ username, tag, avatar, location, stats }) =>  (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}> {username}</p>
-        <p className={css.tag}> {tag}</p>
-        <p className={css.location}> {location}</p>
-      </div>
-
-      <ul className={css.stats}>
-        <li className={css.item}>
-          <span className={css.label}>Followers </span>
-          <span className={css.quantity}>{stats.followers}</span>
-        </li>
-        <li className={css.item}>
-          <span className={css.label}>Views </span>
-          <span className={css.quantity}>{stats.views}</span>
-        </li>
-        <li className={css.item}>
-          <span className={css.label}>Likes </span>
-          <span className={css.quantity}>{stats.likes}</span>
-        </li>
-      </ul>
+export const Profile = ({ username, tag, location, avatar, stats }) => (
+  <div className={styles.profile}>
+    <div className={styles.description}>
+      <img src={avatar} alt="User avatar" className={styles.avatar} />
+      <p className={styles.name}>{username}</p>
+      <p className={styles.tag}>{tag}</p>
+      <p className={styles.location}>{location}</p>
     </div>
-  );
 
+    <ul className={styles.stats}>
+      <li>
+        <span className="label">Followers</span>
+        <span className={styles.quantity}>{stats.followers}</span>
+      </li>
+      <li>
+        <span className="label">Views</span>
+        <span className={styles.quantity}>{stats.views}</span>
+      </li>
+      <li>
+        <span className="label">Likes</span>
+        <span className={styles.quantity}>{stats.likes}</span>
+      </li>
+    </ul>
+  </div>
+);
 
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number),
-}
+    username: propTypes.string.isRequired,
+    tag: propTypes.string.isRequired,
+    location: propTypes.string.isRequired,
+    avatar: propTypes.string.isRequired,
+    stats: propTypes.shape({
+        followers: propTypes.number.isRequired,
+        views: propTypes.number.isRequired,
+        likes: propTypes.number.isRequired,
+    }),
+};

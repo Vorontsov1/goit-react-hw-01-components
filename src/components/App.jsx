@@ -1,14 +1,12 @@
 import { FriendList } from './FriendList/FriendList';
-import friends from '../json/friends.json';
 import { Profile } from './Profile/Profile';
-import user from '../json/user.json';
 import { Statistics } from './Statistics/statistics';
-import statistics from '../json/statistics.json';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+
+import friends from '../json/friends.json';
+import user from '../json/user.json';
+import statistics from '../json/statistics.json';
 import transactions from '../json/transactions.json';
-
-
-
 
 export const App = () => {
   return (
