@@ -21,5 +21,5 @@ FriendListItem.propTypes = {
     name: propTypes.string.isRequired,
     avatar: propTypes.string.isRequired,
     isOnLine: propTypes.bool.isRequired,
-  }),
+  }).isRequired
 };
