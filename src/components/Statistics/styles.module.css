@@ -21,11 +21,11 @@
     padding: 20px;
 }
 
-.statListItem:not(:last-child) {
+.statList.statListItem:not(:last-child) {
     margin-right: 10px;
 }
 
-.statListItem {
+.statList.statListItem {
     display: flex;
     flex-direction: column;
     align-items: center;

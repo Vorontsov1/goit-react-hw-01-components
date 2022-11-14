@@ -1,14 +1,22 @@
 import propTypes from 'prop-types';
 
-import styles from './styles.module.css';
+import styles from '../Statistics/styles.module.css';
 
 export const Statistics = stats => (
-  <section className={styles.Statistics}>
+  <section className={styles.statistics}>
     {stats.title && <h2 className={styles.title}>Upload stats</h2>}
 
     <ul className={styles.statList}>
       {stats.stats.map(stat => (
-        <li className={styles.statLIstItem} key={stat.id}>
+        <li
+          key={stat.id}
+          className={styles.statListItem}
+          style={{
+            backgroundColor: `rgb(${getRandomInt(255)},${getRandomInt(
+              255
+            )},${getRandomInt(255)})`,
+          }}
+        >
           <span className={styles.label}>{stat.label}</span>
           <span className={styles.percentage}>{stat.percentage}%</span>
         </li>
@@ -24,3 +32,7 @@ Statistics.propTypes = {
         })
     ),
 };
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}

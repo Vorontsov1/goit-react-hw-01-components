@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-import styles from './styles.module.css';
+import styles from '../TransactionHistory/styles.module.css';
 
 export const TransactionHistory = ({ items }) => (
   <table className={styles.transactionHistory}>
